@@ -1,0 +1,830 @@
+{
+	"info": {
+		"_postman_id": "1a62c204-4a65-486b-a9a1-98ac8e070e16",
+		"name": "HSBC API gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10388680"
+	},
+	"item": [
+		{
+			"name": "this API call support to deliver the SMS OTP to customer's mobile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Channel Id",
+						"key": "X-HSBC-Channel-Id",
+						"value": "OTHER"
+					},
+					{
+						"description": "(Required) CountryCode",
+						"key": "X-HSBC-Chnl-CountryCode",
+						"value": "HK"
+					},
+					{
+						"description": "Group member code",
+						"key": "X-HSBC-Chnl-Group-Member",
+						"value": "HSBC"
+					},
+					{
+						"description": "(Required) Line of Business",
+						"key": "X-HSBC-GBGF",
+						"value": "GPB"
+					},
+					{
+						"description": "Locale code",
+						"key": "X-HSBC-Locale",
+						"value": "en_IN"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWS {{cidToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "ENCRYPTED_TEXT",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/sms-otps",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sms-otps"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SmsOtpDeliveryResponse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Content Type HTTP XXX (i.e. 200, 400 or 500)",
+								"key": "Content-Type",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"smsOneTimePasswordDelivery\": {\n      \"mobileNumber\": \"<string>\",\n      \"oneTimePasswordCode\": \"<string>\"\n    },\n    \"externalNetworkType\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sms-otps",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sms-otps"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"data\": {\n    \"requestTrace\": {\n      \"traceIdentifier\": \"<string>\"\n    }\n  }\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Content Type HTTP XXX (i.e. 200, 400 or 500)",
+								"key": "Content-Type",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"smsOneTimePasswordDelivery\": {\n      \"mobileNumber\": \"<string>\",\n      \"oneTimePasswordCode\": \"<string>\"\n    },\n    \"externalNetworkType\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sms-otps",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sms-otps"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"eu_b\": \"<object>\",\n    \"aliquipb5f\": \"<object>\",\n    \"do_c6\": \"<object>\",\n    \"sunt_bb0\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consequat_d\": \"<object>\",\n        \"est_de\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ea5d9\": \"<object>\",\n        \"officia_47\": \"<object>\",\n        \"incididunt_78\": \"<object>\",\n        \"fugiat968\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"culpafbf\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_4\": \"<object>\",\n        \"dolor_f5_\": \"<object>\",\n        \"Lorem_57\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"cupidatat8f6\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cupidatat_ae\": \"<object>\",\n        \"seda\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum934\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"tempor9b0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt2_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"esse1_\": \"<object>\",\n        \"pariatur67\": \"<object>\",\n        \"reprehenderitb76\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"et_bc\": \"<object>\",\n        \"magna831\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod08\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_ae\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"in_e9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"laborum_82\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_9\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"nullab\": \"<object>\",\n        \"reprehenderit9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"laboreb9\": \"<object>\",\n        \"auted\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"commodo_93\": \"<object>\",\n        \"dolor2ed\": \"<object>\",\n        \"eiusmod_21f\": \"<object>\",\n        \"id07\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ut348\": \"<object>\",\n        \"velit20\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt_ae\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"consequat3ca\": \"<object>\",\n        \"nona\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt_71a\": \"<object>\",\n        \"commodo__f\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ipsuma_\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate__7\": \"<object>\",\n        \"labore_8\": \"<object>\",\n        \"veniamb9\": \"<object>\",\n        \"nostrud_dbb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquipe1\": \"<object>\",\n        \"consecteturf\": \"<object>\",\n        \"ut_d5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolorec0\": \"<object>\",\n        \"minim3d\": \"<object>\",\n        \"proident_2a\": \"<object>\",\n        \"ad_cc8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed_677\": \"<object>\",\n        \"esse_65\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"eu6_6\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamcoe2\": \"<object>\",\n        \"ina3\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minim_585\": \"<object>\",\n        \"laborec\": \"<object>\",\n        \"esta\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_57\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"consectetur0\": \"<object>\",\n        \"reprehenderit_d6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"commodo_e\": \"<object>\",\n        \"labore_f\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident_ee_\": \"<object>\",\n        \"veniam_b\": \"<object>\",\n        \"in8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"Excepteur_a\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"inc\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"pariatur610\": \"<object>\",\n        \"sunt_9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"est_1\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_f1\": \"<object>\",\n        \"proident0a\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"cupidatat_bd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing01\": \"<object>\",\n        \"magna_7\": \"<object>\",\n        \"tempor2c\": \"<object>\",\n        \"commodof22\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"exercitationb0b\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nisi_e04\": \"<object>\",\n        \"aliquip_0b\": \"<object>\",\n        \"dolor97\": \"<object>\",\n        \"dolord\": \"<object>\",\n        \"occaecat_2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eu_57\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ea_099\": \"<object>\",\n        \"nisi_c7\": \"<object>\",\n        \"adipisicing710\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor4b\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"exercitation_f\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sed_78d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"pariatur7e1\": \"<object>\",\n        \"Excepteur_48_\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cupidatata3_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"reprehenderit5_\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"quis_cc5\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"exercitation_6\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui_88_\": \"<object>\",\n        \"aliquafe5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_206\": \"<object>\",\n        \"officia09e\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_9_\": \"<object>\",\n        \"ut__\": \"<object>\",\n        \"laboris7\": \"<object>\",\n        \"cillum95\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"esse_3c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"exercitation88\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_790\": \"<object>\",\n        \"Duisa29\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"in_a\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ad04\": \"<object>\",\n        \"dolore_c0f\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Content Type HTTP XXX (i.e. 200, 400 or 500)",
+								"key": "Content-Type",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"smsOneTimePasswordDelivery\": {\n      \"mobileNumber\": \"<string>\",\n      \"oneTimePasswordCode\": \"<string>\"\n    },\n    \"externalNetworkType\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sms-otps",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sms-otps"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"incididunt_24\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem__\": \"<object>\",\n        \"est_71b\": \"<object>\",\n        \"proidentb8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_fa4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"anim_2a4\": \"<object>\",\n        \"dolor_51c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident74\": \"<object>\",\n        \"sed49\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"in_fc4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea1\": \"<object>\",\n        \"esse_c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Utaa\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ut_4\": \"<object>\",\n        \"tempor16\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea5\": \"<object>\",\n        \"sunt13\": \"<object>\",\n        \"dolore6\": \"<object>\",\n        \"velit_e09\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"minim_e9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore6d\": \"<object>\",\n        \"culpac4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"officiac8\": \"<object>\",\n        \"laboris2fb\": \"<object>\",\n        \"id_87\": \"<object>\",\n        \"laboruma\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing7\": \"<object>\",\n        \"in_38c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"pariatura2\": \"<object>\",\n        \"eu__38\": \"<object>\",\n        \"Excepteur_7bd\": \"<object>\",\n        \"labore_6\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"proident_01\": \"<object>\",\n        \"ea2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed__b\": \"<object>\",\n        \"pariatur_5e0\": \"<object>\",\n        \"ut_ce\": \"<object>\",\n        \"magna1\": \"<object>\",\n        \"exercitation6f4\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat_0\": \"<object>\",\n        \"sit9d6\": \"<object>\",\n        \"ullamco_5\": \"<object>\",\n        \"do_d1\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nisi67a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"do_f16\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"tempor_6e\": \"<object>\",\n        \"magna_\": \"<object>\",\n        \"ullamco1f4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"in_f7\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ad_a\": \"<object>\",\n        \"idef\": \"<object>\",\n        \"voluptate_c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minimb0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"est_f80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cillum_8\": \"<object>\",\n        \"sintf4\": \"<object>\",\n        \"laboris_80_\": \"<object>\",\n        \"ullamcoc_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eaac8\": \"<object>\",\n        \"autec90\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat8\": \"<object>\",\n        \"labore_e9\": \"<object>\",\n        \"consectetur8\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_64\": \"<object>\",\n        \"mollit_85\": \"<object>\",\n        \"nulla_ac\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_e8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"laboris_2_\": \"<object>\",\n        \"reprehenderitd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor__7\": \"<object>\",\n        \"quis_7\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat_0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_61\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ex_472\": \"<object>\",\n        \"elit_07\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_2a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt180\": \"<object>\",\n        \"voluptatea7c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"non03f\": \"<object>\",\n        \"nostrudf\": \"<object>\",\n        \"aliqua_9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"id0\": \"<object>\",\n        \"est77\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_29\": \"<object>\",\n        \"exercitation1fe\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"id9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt1d2\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sintece\": \"<object>\",\n        \"Ut_e\": \"<object>\",\n        \"laboris__\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"veniam_\": \"<object>\",\n        \"est_e4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo8\": \"<object>\",\n        \"velit_e8\": \"<object>\",\n        \"laboris_f6d\": \"<object>\",\n        \"laborum4\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat2d\": \"<object>\",\n        \"amet_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco9f1\": \"<object>\",\n        \"eu9\": \"<object>\",\n        \"eiusmod3b\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquip_0\": \"<object>\",\n        \"voluptate_7\": \"<object>\",\n        \"aute1a8\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nostrud_6b1\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_7\": \"<object>\",\n        \"officia_6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing_95\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui3b\": \"<object>\",\n        \"cupidatat_7\": \"<object>\",\n        \"dolorec5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"culpa_54f\": \"<object>\",\n        \"deseruntb\": \"<object>\",\n        \"dolor_b_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_fe\": \"<object>\",\n        \"in_8d\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo__9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ex1\": \"<object>\",\n        \"consectetur_b7f\": \"<object>\",\n        \"exercitation_d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ut__\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"aliqua9\": \"<object>\",\n        \"nisi01\": \"<object>\",\n        \"dolorc\": \"<object>\",\n        \"Duisb\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eu_c3\": \"<object>\",\n        \"elit_b75\": \"<object>\",\n        \"quis_2fc\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat22\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"qui_72\": \"<object>\",\n        \"officia81\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consecteturafd\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_fb4\": \"<object>\",\n        \"do4cb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_9\": \"<object>\",\n        \"adipisicinga\": \"<object>\",\n        \"reprehenderit5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nostrudaa0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"labore_e3\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum_ed\": \"<object>\",\n        \"consequat_3_\": \"<object>\",\n        \"magnabd2\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login credential verification. Obtain the temporary login credential code through the wx.login interface and pass it to the developer server to call this interface to complete the login process. For more usage methods, see Mini Program Login.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Channel Id",
+						"key": "X-HSBC-Channel-Id",
+						"value": "OTHER"
+					},
+					{
+						"description": "(Required) CountryCode",
+						"key": "X-HSBC-Chnl-CountryCode",
+						"value": "HK"
+					},
+					{
+						"description": "Group member code",
+						"key": "X-HSBC-Chnl-Group-Member",
+						"value": "HSBC"
+					},
+					{
+						"description": "(Required) Line of Business",
+						"key": "X-HSBC-GBGF",
+						"value": "GPB"
+					},
+					{
+						"description": "Locale code",
+						"key": "X-HSBC-Locale",
+						"value": "en_IN"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWS {{cidToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/login-sessions?externalNetworkType=WECHAT&jsCode=0d26o7000OtXmQ1qIe100ja4y746o70%",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login-sessions"
+					],
+					"query": [
+						{
+							"key": "externalNetworkType",
+							"value": "WECHAT",
+							"description": "(Required) externalNetworkType eg:wechat,whatsapp,line"
+						},
+						{
+							"key": "jsCode",
+							"value": "0d26o7000OtXmQ1qIe100ja4y746o70%",
+							"description": "(Required) The code obtained when logging in can be obtained through wx.login"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LoginResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/login-sessions?externalNetworkType=<string>&jsCode=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login-sessions"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								},
+								{
+									"key": "jsCode",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"data\": {\n    \"miniProgramLoginResponse\": {\n      \"openId\": \"<string>\",\n      \"sessionKey\": \"<string>\",\n      \"unionId\": \"<string>\"\n    },\n    \"requestTrace\": {\n      \"traceIdentifier\": \"<string>\"\n    }\n  }\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/login-sessions?externalNetworkType=<string>&jsCode=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login-sessions"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								},
+								{
+									"key": "jsCode",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"incididunt_24\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem__\": \"<object>\",\n        \"est_71b\": \"<object>\",\n        \"proidentb8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_fa4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"anim_2a4\": \"<object>\",\n        \"dolor_51c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident74\": \"<object>\",\n        \"sed49\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"in_fc4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea1\": \"<object>\",\n        \"esse_c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Utaa\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ut_4\": \"<object>\",\n        \"tempor16\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea5\": \"<object>\",\n        \"sunt13\": \"<object>\",\n        \"dolore6\": \"<object>\",\n        \"velit_e09\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"minim_e9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore6d\": \"<object>\",\n        \"culpac4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"officiac8\": \"<object>\",\n        \"laboris2fb\": \"<object>\",\n        \"id_87\": \"<object>\",\n        \"laboruma\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing7\": \"<object>\",\n        \"in_38c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"pariatura2\": \"<object>\",\n        \"eu__38\": \"<object>\",\n        \"Excepteur_7bd\": \"<object>\",\n        \"labore_6\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"proident_01\": \"<object>\",\n        \"ea2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed__b\": \"<object>\",\n        \"pariatur_5e0\": \"<object>\",\n        \"ut_ce\": \"<object>\",\n        \"magna1\": \"<object>\",\n        \"exercitation6f4\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat_0\": \"<object>\",\n        \"sit9d6\": \"<object>\",\n        \"ullamco_5\": \"<object>\",\n        \"do_d1\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nisi67a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"do_f16\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"tempor_6e\": \"<object>\",\n        \"magna_\": \"<object>\",\n        \"ullamco1f4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"in_f7\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ad_a\": \"<object>\",\n        \"idef\": \"<object>\",\n        \"voluptate_c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minimb0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"est_f80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cillum_8\": \"<object>\",\n        \"sintf4\": \"<object>\",\n        \"laboris_80_\": \"<object>\",\n        \"ullamcoc_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eaac8\": \"<object>\",\n        \"autec90\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat8\": \"<object>\",\n        \"labore_e9\": \"<object>\",\n        \"consectetur8\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_64\": \"<object>\",\n        \"mollit_85\": \"<object>\",\n        \"nulla_ac\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_e8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"laboris_2_\": \"<object>\",\n        \"reprehenderitd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor__7\": \"<object>\",\n        \"quis_7\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat_0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_61\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ex_472\": \"<object>\",\n        \"elit_07\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_2a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt180\": \"<object>\",\n        \"voluptatea7c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"non03f\": \"<object>\",\n        \"nostrudf\": \"<object>\",\n        \"aliqua_9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"id0\": \"<object>\",\n        \"est77\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_29\": \"<object>\",\n        \"exercitation1fe\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"id9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt1d2\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sintece\": \"<object>\",\n        \"Ut_e\": \"<object>\",\n        \"laboris__\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"veniam_\": \"<object>\",\n        \"est_e4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo8\": \"<object>\",\n        \"velit_e8\": \"<object>\",\n        \"laboris_f6d\": \"<object>\",\n        \"laborum4\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat2d\": \"<object>\",\n        \"amet_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco9f1\": \"<object>\",\n        \"eu9\": \"<object>\",\n        \"eiusmod3b\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquip_0\": \"<object>\",\n        \"voluptate_7\": \"<object>\",\n        \"aute1a8\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nostrud_6b1\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_7\": \"<object>\",\n        \"officia_6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing_95\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui3b\": \"<object>\",\n        \"cupidatat_7\": \"<object>\",\n        \"dolorec5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"culpa_54f\": \"<object>\",\n        \"deseruntb\": \"<object>\",\n        \"dolor_b_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_fe\": \"<object>\",\n        \"in_8d\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo__9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ex1\": \"<object>\",\n        \"consectetur_b7f\": \"<object>\",\n        \"exercitation_d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ut__\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"aliqua9\": \"<object>\",\n        \"nisi01\": \"<object>\",\n        \"dolorc\": \"<object>\",\n        \"Duisb\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eu_c3\": \"<object>\",\n        \"elit_b75\": \"<object>\",\n        \"quis_2fc\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat22\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"qui_72\": \"<object>\",\n        \"officia81\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consecteturafd\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_fb4\": \"<object>\",\n        \"do4cb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_9\": \"<object>\",\n        \"adipisicinga\": \"<object>\",\n        \"reprehenderit5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nostrudaa0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"labore_e3\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum_ed\": \"<object>\",\n        \"consequat_3_\": \"<object>\",\n        \"magnabd2\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/login-sessions?externalNetworkType=<string>&jsCode=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login-sessions"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								},
+								{
+									"key": "jsCode",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"incididunt_24\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem__\": \"<object>\",\n        \"est_71b\": \"<object>\",\n        \"proidentb8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_fa4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"anim_2a4\": \"<object>\",\n        \"dolor_51c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident74\": \"<object>\",\n        \"sed49\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"in_fc4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea1\": \"<object>\",\n        \"esse_c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Utaa\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ut_4\": \"<object>\",\n        \"tempor16\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea5\": \"<object>\",\n        \"sunt13\": \"<object>\",\n        \"dolore6\": \"<object>\",\n        \"velit_e09\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"minim_e9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore6d\": \"<object>\",\n        \"culpac4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"officiac8\": \"<object>\",\n        \"laboris2fb\": \"<object>\",\n        \"id_87\": \"<object>\",\n        \"laboruma\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing7\": \"<object>\",\n        \"in_38c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"pariatura2\": \"<object>\",\n        \"eu__38\": \"<object>\",\n        \"Excepteur_7bd\": \"<object>\",\n        \"labore_6\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"proident_01\": \"<object>\",\n        \"ea2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed__b\": \"<object>\",\n        \"pariatur_5e0\": \"<object>\",\n        \"ut_ce\": \"<object>\",\n        \"magna1\": \"<object>\",\n        \"exercitation6f4\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat_0\": \"<object>\",\n        \"sit9d6\": \"<object>\",\n        \"ullamco_5\": \"<object>\",\n        \"do_d1\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nisi67a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"do_f16\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"tempor_6e\": \"<object>\",\n        \"magna_\": \"<object>\",\n        \"ullamco1f4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"in_f7\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ad_a\": \"<object>\",\n        \"idef\": \"<object>\",\n        \"voluptate_c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minimb0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"est_f80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cillum_8\": \"<object>\",\n        \"sintf4\": \"<object>\",\n        \"laboris_80_\": \"<object>\",\n        \"ullamcoc_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eaac8\": \"<object>\",\n        \"autec90\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat8\": \"<object>\",\n        \"labore_e9\": \"<object>\",\n        \"consectetur8\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_64\": \"<object>\",\n        \"mollit_85\": \"<object>\",\n        \"nulla_ac\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_e8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"laboris_2_\": \"<object>\",\n        \"reprehenderitd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor__7\": \"<object>\",\n        \"quis_7\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat_0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_61\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ex_472\": \"<object>\",\n        \"elit_07\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_2a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt180\": \"<object>\",\n        \"voluptatea7c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"non03f\": \"<object>\",\n        \"nostrudf\": \"<object>\",\n        \"aliqua_9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"id0\": \"<object>\",\n        \"est77\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_29\": \"<object>\",\n        \"exercitation1fe\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"id9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt1d2\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sintece\": \"<object>\",\n        \"Ut_e\": \"<object>\",\n        \"laboris__\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"veniam_\": \"<object>\",\n        \"est_e4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo8\": \"<object>\",\n        \"velit_e8\": \"<object>\",\n        \"laboris_f6d\": \"<object>\",\n        \"laborum4\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat2d\": \"<object>\",\n        \"amet_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco9f1\": \"<object>\",\n        \"eu9\": \"<object>\",\n        \"eiusmod3b\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquip_0\": \"<object>\",\n        \"voluptate_7\": \"<object>\",\n        \"aute1a8\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nostrud_6b1\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_7\": \"<object>\",\n        \"officia_6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing_95\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui3b\": \"<object>\",\n        \"cupidatat_7\": \"<object>\",\n        \"dolorec5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"culpa_54f\": \"<object>\",\n        \"deseruntb\": \"<object>\",\n        \"dolor_b_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_fe\": \"<object>\",\n        \"in_8d\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo__9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ex1\": \"<object>\",\n        \"consectetur_b7f\": \"<object>\",\n        \"exercitation_d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ut__\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"aliqua9\": \"<object>\",\n        \"nisi01\": \"<object>\",\n        \"dolorc\": \"<object>\",\n        \"Duisb\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eu_c3\": \"<object>\",\n        \"elit_b75\": \"<object>\",\n        \"quis_2fc\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat22\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"qui_72\": \"<object>\",\n        \"officia81\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consecteturafd\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_fb4\": \"<object>\",\n        \"do4cb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_9\": \"<object>\",\n        \"adipisicinga\": \"<object>\",\n        \"reprehenderit5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nostrudaa0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"labore_e3\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum_ed\": \"<object>\",\n        \"consequat_3_\": \"<object>\",\n        \"magnabd2\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				}
+			]
+		},
+		{
+			"name": "The access_token is the globally unique interface call credential of the official account, and the access_token is required when the official account calls each interface. Developers need to properly save. The storage of access_token must reserve at least",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Channel Id",
+						"key": "X-HSBC-Channel-Id",
+						"value": "OTHER"
+					},
+					{
+						"description": "(Required) CountryCode",
+						"key": "X-HSBC-Chnl-CountryCode",
+						"value": "HK"
+					},
+					{
+						"description": "Group member code",
+						"key": "X-HSBC-Chnl-Group-Member",
+						"value": "HSBC"
+					},
+					{
+						"description": "(Required) Line of Business",
+						"key": "X-HSBC-GBGF",
+						"value": "GPB"
+					},
+					{
+						"description": "Locale code",
+						"key": "X-HSBC-Locale",
+						"value": "en_IN"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWS {{cidToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/access-tokens?externalNetworkType=WECHAT",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"access-tokens"
+					],
+					"query": [
+						{
+							"key": "externalNetworkType",
+							"value": "WECHAT",
+							"description": "(Required) externalNetworkType eg:WECHAT,WHATSAPP,LINE"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AccessTokenResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/access-tokens?externalNetworkType=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"access-tokens"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"data\": {\n    \"accessToken\": {\n      \"expiryTime\": \"<integer>\",\n      \"tokenValue\": \"<string>\"\n    },\n    \"requestTrace\": {\n      \"traceIdentifier\": \"<string>\"\n    }\n  }\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/access-tokens?externalNetworkType=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"access-tokens"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"incididunt_24\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem__\": \"<object>\",\n        \"est_71b\": \"<object>\",\n        \"proidentb8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_fa4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"anim_2a4\": \"<object>\",\n        \"dolor_51c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident74\": \"<object>\",\n        \"sed49\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"in_fc4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea1\": \"<object>\",\n        \"esse_c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Utaa\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ut_4\": \"<object>\",\n        \"tempor16\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea5\": \"<object>\",\n        \"sunt13\": \"<object>\",\n        \"dolore6\": \"<object>\",\n        \"velit_e09\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"minim_e9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore6d\": \"<object>\",\n        \"culpac4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"officiac8\": \"<object>\",\n        \"laboris2fb\": \"<object>\",\n        \"id_87\": \"<object>\",\n        \"laboruma\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing7\": \"<object>\",\n        \"in_38c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"pariatura2\": \"<object>\",\n        \"eu__38\": \"<object>\",\n        \"Excepteur_7bd\": \"<object>\",\n        \"labore_6\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"proident_01\": \"<object>\",\n        \"ea2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed__b\": \"<object>\",\n        \"pariatur_5e0\": \"<object>\",\n        \"ut_ce\": \"<object>\",\n        \"magna1\": \"<object>\",\n        \"exercitation6f4\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat_0\": \"<object>\",\n        \"sit9d6\": \"<object>\",\n        \"ullamco_5\": \"<object>\",\n        \"do_d1\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nisi67a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"do_f16\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"tempor_6e\": \"<object>\",\n        \"magna_\": \"<object>\",\n        \"ullamco1f4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"in_f7\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ad_a\": \"<object>\",\n        \"idef\": \"<object>\",\n        \"voluptate_c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minimb0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"est_f80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cillum_8\": \"<object>\",\n        \"sintf4\": \"<object>\",\n        \"laboris_80_\": \"<object>\",\n        \"ullamcoc_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eaac8\": \"<object>\",\n        \"autec90\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat8\": \"<object>\",\n        \"labore_e9\": \"<object>\",\n        \"consectetur8\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_64\": \"<object>\",\n        \"mollit_85\": \"<object>\",\n        \"nulla_ac\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_e8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"laboris_2_\": \"<object>\",\n        \"reprehenderitd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor__7\": \"<object>\",\n        \"quis_7\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat_0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_61\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ex_472\": \"<object>\",\n        \"elit_07\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_2a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt180\": \"<object>\",\n        \"voluptatea7c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"non03f\": \"<object>\",\n        \"nostrudf\": \"<object>\",\n        \"aliqua_9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"id0\": \"<object>\",\n        \"est77\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_29\": \"<object>\",\n        \"exercitation1fe\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"id9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt1d2\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sintece\": \"<object>\",\n        \"Ut_e\": \"<object>\",\n        \"laboris__\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"veniam_\": \"<object>\",\n        \"est_e4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo8\": \"<object>\",\n        \"velit_e8\": \"<object>\",\n        \"laboris_f6d\": \"<object>\",\n        \"laborum4\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat2d\": \"<object>\",\n        \"amet_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco9f1\": \"<object>\",\n        \"eu9\": \"<object>\",\n        \"eiusmod3b\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquip_0\": \"<object>\",\n        \"voluptate_7\": \"<object>\",\n        \"aute1a8\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nostrud_6b1\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_7\": \"<object>\",\n        \"officia_6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing_95\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui3b\": \"<object>\",\n        \"cupidatat_7\": \"<object>\",\n        \"dolorec5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"culpa_54f\": \"<object>\",\n        \"deseruntb\": \"<object>\",\n        \"dolor_b_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_fe\": \"<object>\",\n        \"in_8d\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo__9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ex1\": \"<object>\",\n        \"consectetur_b7f\": \"<object>\",\n        \"exercitation_d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ut__\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"aliqua9\": \"<object>\",\n        \"nisi01\": \"<object>\",\n        \"dolorc\": \"<object>\",\n        \"Duisb\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eu_c3\": \"<object>\",\n        \"elit_b75\": \"<object>\",\n        \"quis_2fc\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat22\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"qui_72\": \"<object>\",\n        \"officia81\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consecteturafd\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_fb4\": \"<object>\",\n        \"do4cb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_9\": \"<object>\",\n        \"adipisicinga\": \"<object>\",\n        \"reprehenderit5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nostrudaa0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"labore_e3\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum_ed\": \"<object>\",\n        \"consequat_3_\": \"<object>\",\n        \"magnabd2\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				},
+				{
+					"name": "ErrorResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) JWS <CID token>",
+								"key": "Authorization",
+								"value": "<string>"
+							},
+							{
+								"description": "Channel Id",
+								"key": "X-HSBC-Channel-Id",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) CountryCode",
+								"key": "X-HSBC-Chnl-CountryCode",
+								"value": "<string>"
+							},
+							{
+								"description": "Group member code",
+								"key": "X-HSBC-Chnl-Group-Member",
+								"value": "<string>"
+							},
+							{
+								"description": "(Required) Line of Business",
+								"key": "X-HSBC-GBGF",
+								"value": "<string>"
+							},
+							{
+								"description": "Locale code",
+								"key": "X-HSBC-Locale",
+								"value": "<string>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/access-tokens?externalNetworkType=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"access-tokens"
+							],
+							"query": [
+								{
+									"key": "externalNetworkType",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"detail\": \"<string>\",\n  \"errorDateTime\": \"<string>\",\n  \"instance\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"sourceDetails\": {\n    \"eimId\": \"<long>\",\n    \"applicationName\": \"<string>\",\n    \"transactionName\": \"<string>\",\n    \"layerType\": \"<string>\"\n  },\n  \"extendedDetails\": {\n    \"empty\": \"<boolean>\",\n    \"incididunt_24\": \"<object>\"\n  },\n  \"errors\": [\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem__\": \"<object>\",\n        \"est_71b\": \"<object>\",\n        \"proidentb8\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"aute_fa4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"anim_2a4\": \"<object>\",\n        \"dolor_51c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"proident74\": \"<object>\",\n        \"sed49\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"in_fc4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea1\": \"<object>\",\n        \"esse_c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"Utaa\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ut_4\": \"<object>\",\n        \"tempor16\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ea5\": \"<object>\",\n        \"sunt13\": \"<object>\",\n        \"dolore6\": \"<object>\",\n        \"velit_e09\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"minim_e9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"dolore6d\": \"<object>\",\n        \"culpac4\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"officiac8\": \"<object>\",\n        \"laboris2fb\": \"<object>\",\n        \"id_87\": \"<object>\",\n        \"laboruma\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing7\": \"<object>\",\n        \"in_38c\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"pariatura2\": \"<object>\",\n        \"eu__38\": \"<object>\",\n        \"Excepteur_7bd\": \"<object>\",\n        \"labore_6\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"proident_01\": \"<object>\",\n        \"ea2\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"sed__b\": \"<object>\",\n        \"pariatur_5e0\": \"<object>\",\n        \"ut_ce\": \"<object>\",\n        \"magna1\": \"<object>\",\n        \"exercitation6f4\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat_0\": \"<object>\",\n        \"sit9d6\": \"<object>\",\n        \"ullamco_5\": \"<object>\",\n        \"do_d1\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nisi67a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"do_f16\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"tempor_6e\": \"<object>\",\n        \"magna_\": \"<object>\",\n        \"ullamco1f4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"in_f7\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ad_a\": \"<object>\",\n        \"idef\": \"<object>\",\n        \"voluptate_c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"minimb0\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"est_f80\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"cillum_8\": \"<object>\",\n        \"sintf4\": \"<object>\",\n        \"laboris_80_\": \"<object>\",\n        \"ullamcoc_\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eaac8\": \"<object>\",\n        \"autec90\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat8\": \"<object>\",\n        \"labore_e9\": \"<object>\",\n        \"consectetur8\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_64\": \"<object>\",\n        \"mollit_85\": \"<object>\",\n        \"nulla_ac\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt_e8\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"laboris_2_\": \"<object>\",\n        \"reprehenderitd\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor__7\": \"<object>\",\n        \"quis_7\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"fugiat_0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"Lorem_61\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"ex_472\": \"<object>\",\n        \"elit_07\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco_2a\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sunt180\": \"<object>\",\n        \"voluptatea7c\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"non03f\": \"<object>\",\n        \"nostrudf\": \"<object>\",\n        \"aliqua_9\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"id0\": \"<object>\",\n        \"est77\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolore_29\": \"<object>\",\n        \"exercitation1fe\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"id9\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"deserunt1d2\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"sintece\": \"<object>\",\n        \"Ut_e\": \"<object>\",\n        \"laboris__\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_c\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"veniam_\": \"<object>\",\n        \"est_e4\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo8\": \"<object>\",\n        \"velit_e8\": \"<object>\",\n        \"laboris_f6d\": \"<object>\",\n        \"laborum4\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat2d\": \"<object>\",\n        \"amet_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ullamco9f1\": \"<object>\",\n        \"eu9\": \"<object>\",\n        \"eiusmod3b\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"aliquip_0\": \"<object>\",\n        \"voluptate_7\": \"<object>\",\n        \"aute1a8\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"nostrud_6b1\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"voluptate_7\": \"<object>\",\n        \"officia_6\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"adipisicing_95\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"qui3b\": \"<object>\",\n        \"cupidatat_7\": \"<object>\",\n        \"dolorec5\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"culpa_54f\": \"<object>\",\n        \"deseruntb\": \"<object>\",\n        \"dolor_b_b\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"nulla_fe\": \"<object>\",\n        \"in_8d\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"commodo__9\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"ex1\": \"<object>\",\n        \"consectetur_b7f\": \"<object>\",\n        \"exercitation_d\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ut__\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"aliqua9\": \"<object>\",\n        \"nisi01\": \"<object>\",\n        \"dolorc\": \"<object>\",\n        \"Duisb\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"eu_c3\": \"<object>\",\n        \"elit_b75\": \"<object>\",\n        \"quis_2fc\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"occaecat22\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"qui_72\": \"<object>\",\n        \"officia81\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"consecteturafd\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"eiusmod_fb4\": \"<object>\",\n        \"do4cb\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\",\n        \"dolor_9\": \"<object>\",\n        \"adipisicinga\": \"<object>\",\n        \"reprehenderit5\": \"<object>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    },\n    {\n      \"detail\": {\n        \"empty\": \"<boolean>\",\n        \"nostrudaa0\": \"<object>\"\n      },\n      \"type\": {\n        \"empty\": \"<boolean>\",\n        \"labore_e3\": \"<object>\"\n      },\n      \"title\": {\n        \"empty\": \"<boolean>\",\n        \"ipsum_ed\": \"<object>\",\n        \"consequat_3_\": \"<object>\",\n        \"magnabd2\": \"<object>\"\n      },\n      \"status\": {\n        \"empty\": \"<boolean>\"\n      },\n      \"sourceDetails\": {\n        \"eimId\": \"<long>\",\n        \"applicationName\": \"<string>\",\n        \"transactionName\": \"<string>\",\n        \"layerType\": \"<string>\"\n      }\n    }\n  ],\n  \"supportTeamName\": \"<string>\",\n  \"supportContactEmail\": \"<string>\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://urldefense.com/v3/__https://digitaldev.api.p2g.netd2.hsbc.com.hk/wpb-gpbw-util-ap-hsbc-pa-inst-mess-access-cert-proxy/v0__;!!JrOaqOcUag!I-Tvl-_MatH1IbsdBFpzKM_iGTIcU_3zZl63SLgpH3zMQPanaxPX84_oESDriaNWnZCEU2q9enMGBbOz6ZsCtIOyrVA$",
+			"type": "string"
+		}
+	]
+}
